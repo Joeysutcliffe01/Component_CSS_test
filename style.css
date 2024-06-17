@@ -1,0 +1,294 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+
+    /* ------------------------------- Colors */
+    --prefixbox-primary: #1abc9c;
+    --prefixbox-primary1: #ff0000;
+    --prefixbox-dark-text: #000;
+    --prefixbox-light-text: #fff;
+
+    --prefixbox-dark-gray: #dedede29;
+    --prefixbox-light-gray: #ffffff34;
+    
+    /* ------------------------------- font types*/
+    --prefixbox-font-Montserrat:"Montserrat", sans-serif;
+    --prefixbox-font-Arial: Arial, sans-serif;;
+}
+
+*{
+    box-sizing: border-box;
+    padding:0;
+    margin:0;
+    font-family: var(--prefixbox-font-Arial);
+}
+
+/* .prefixbox-autocomplete-container{
+  border: 3px solid rgb(255, 251, 0);
+} */
+
+.search-form{
+    display:flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin:30px 0 0 30px;
+}
+.search-title{
+    display: flex;
+    align-items: flex-start;
+}
+.search-input{
+    width:49rem;
+    margin-left:15px;
+    position:relative;
+}
+input#keyword{
+    position: relative;
+    width:100%;
+    padding:8px 15px;
+    font-size:15px;
+    border-radius: 25px;
+    border:2px solid var(--prefixbox-primary);
+}
+input#keyword:focus{
+    outline: none;
+}
+
+/*--------------------AUTOCOMPLETE------------------------*/
+
+.prefixbox-autocomplete-container {
+    display: flex;
+    box-sizing: border-box;
+    z-index: 62;
+    margin: 0;
+    text-align: left;
+    max-width: 75rem;
+    width: 90vw;
+    max-height: 640px;
+    height: 88vh;
+    margin-right: 1rem;
+    top: 44px;
+    border-radius: 2rem;
+    background-color: var(--prefixbox-primary); 
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; 
+    position: absolute;
+    /* border: 2px solid red; */
+}   
+.prefixbox-autocomplete-container .col-1 {
+    width: 30%;
+    padding: 1rem;
+}
+.prefixbox-autocomplete-container .col-2 {
+    background:#fff;
+    width: 70%;
+    padding: .7rem 1.2rem;
+    border-radius: 0 2rem 2rem 0;
+}
+.group-id-2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+    background:#fff;
+    padding-top: 2rem;
+    border-radius: 0 2rem 2rem 0;
+    overflow-x: hidden;
+}
+.group-id-2::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgb(175, 175, 175);
+    border-radius: 10px;
+    background-color: #F5F5F5;
+    position: absolute;
+    left: 1rem;
+    border-radius: 10rem;
+}
+
+.group-id-2::-webkit-scrollbar
+{
+    width: 12px;
+    background-color: #F5F5F5;
+    padding-right: 10rem;
+    position: absolute;
+    left: 1rem;
+    height: 1rem;
+    margin-block: 5em;
+}
+.group-id-2::-webkit-scrollbar-thumb
+{
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: var(--prefixbox-primary);
+    padding-right: 10rem;
+    position: absolute;
+    left: 1rem;
+    margin-block: 5em;
+}
+.prefixbox-autocomplete-keyword-container {
+    color: var(--prefixbox-light-text);
+    font-size: 1rem;
+    padding: 1rem;
+    margin: .4rem 0;
+    cursor: pointer;
+    border-bottom: 2px solid var(--prefixbox-light-gray);
+    transition: all .3s ease-in-out;
+}
+.prefixbox-autocomplete-keyword-container:hover{
+    border-bottom: 2px solid rgba(255, 255, 255, 0);
+    border-radius: 2rem;
+    padding-left: 2rem;
+    background-color: var(--prefixbox-light-gray);
+}
+.prefixbox-autocomplete-keyword-container span b{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: .9em;
+}
+.prefixbox-group-2-title.pfbx-group-title {
+    display: none;
+}
+.col-2 .prefixbox-group-container{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.prefixbox-autocomplete-product-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    width: 4rem;
+    padding: 2rem 6.5rem 0rem 6.5rem;
+    border-radius: 1.5rem;
+    margin-top: -1.3rem;
+    margin-bottom: 4.5rem;
+    transition: all .1s ease-in-out;
+    cursor: pointer;
+    border: 3px solid rgba(255, 255, 255, 0);
+}
+.prefixbox-autocomplete-product-container:hover {
+    border: 3px solid var(--prefixbox-primary);
+}
+.prefixbox-autocomplete-product{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 15rem;
+    padding: .5rem;
+}
+.prefixbox-autocomplete-left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 200px;
+}
+.prefixbox-autocomplete-left img {
+    margin-bottom: 2rem;
+    width: 100%;
+    height: 7rem;
+}
+.prefixbox-autocomplete-product-container 
+.prefixbox-autocomplete-body 
+b
+{
+    width: 100%;
+    text-align: center;
+    margin: -5rem 0 -5rem 0 ;
+    font-size: 1em;
+    font-weight: 400;
+    font-family: 'Montserrat', sans-serif;
+}
+.prefixbox-autocomplete-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 1rem 0;
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 700;
+}
+.prefixbox-autocomplete-right span{
+    margin: .3rem 0;
+}
+.prefixbox-sale-price,
+.prefixbox-regular-price
+{
+    font-weight: 700;
+    font-size: 1.3em;
+}
+.prefixbox-sale-price{
+    color: var(--prefixbox-primary1);
+    font-weight: 600;
+    font-size: 1.3em;
+}
+.prefixbox-regular-price{
+    color: var(--prefixbox-primary);
+}
+.prefixbox-old-price{
+    text-decoration: line-through;
+    color: gray;
+
+}
+@media (max-width: 1200px){
+    .prefixbox-autocomplete-container {
+        max-width: 75rem;
+        width: 80vw;
+        max-height: 42rem;
+        margin-right: 1rem;
+    }   
+
+    .search-input{
+        width: 80vw;
+        margin-left:15px;
+        position:relative;
+    }
+}
+@media (max-width: 700px){
+    .search-input{
+        width: 90vw;
+    }
+
+    .search-title{
+        display: none;
+    }
+    .prefixbox-autocomplete-container {
+        flex-direction: column;
+        width: 90vw;
+        height: 80vh;
+        margin: 0 auto;
+    }   
+    .prefixbox-autocomplete-container .col-1 {
+        width: 100%;
+        height: 42%;
+        padding: 1rem;
+    }
+    .prefixbox-autocomplete-container .col-2 {
+        height: 58%;
+        width: 100%;
+        padding: .7rem 1.2rem;
+        background:#fff;
+        border-radius: 0rem 0rem 2rem 2rem;
+    }
+    .prefixbox-group-container.group-id-1 > div:nth-of-type(5) ~ div {
+        display: none;
+    }
+}
+@media (max-width: 500px){
+
+    .prefixbox-autocomplete-container {
+        flex-direction: column;
+        width: 90vw;
+        height: 80vh;
+    }  
+    .search-input{
+        margin:0;
+    }
+}
